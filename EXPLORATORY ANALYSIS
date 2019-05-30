@@ -1,0 +1,147 @@
+Before performing actual classification, some exploration of data was required to be carried out. 
+This required visualisation, which helped in understanding the data better. 
+For this purpose, a scatter plot has been plotted. 
+A two-dimensional plotting with X axis as the location-names and on the Y axis is the HDI Interval. 
+
+After plotting a graph using matplotlib library, we knew how the values of different countries are scattered over. 
+Since, this is a classification problem, it was required to state the classification intervals for each category of countries; developed, developing or under-developed. 
+Three different values are stored in order to classify the status of a country. For any HDI value smaller than 0.490, the country is classified as “Under-Developed”. For a country whose values lie between 0.490 and 0.750, it is said to be a “developing country”. For any value above 0.750, the country is classified as “Developed”. 
+The status defined to each category is as follows: 
+•	• Under-developed-0   
+•	• Developing-1   
+•	• Developed-2   
+
+Once, the values were inputted, it was important to know how the graph looks like in order to know categorial distribution of countries for further analysis. 
+Using matplotlib another plot has been constructed which specifies the distribution of HDI-2017 with respect to the status.  
+
+A regular bar plot was generated for the status of the country and HDI values to make a judgement about the frequency of score occurrence that has been provided to sort countries out on the basis of their level of development. 
+A basic pie chart was also created as a part of Visualisation to check the HDI vs. Status Plot. With the help of the pie chart, it was easy to classify the percentage of members each class holds. Along with the pie chart, the size of each class is also found out. 
+•	• CO-RELATION BETWEEN ALL FEATURES 
+
+A co-relation was found out between all nine factors in the dataset. The red colour depicts high co-relation, whereas the blue depicts low co-relation. 
+The graph shows that all factors are not strongly co-related with each other but the HDI value and status is. 
+Hence, this is why HDI is the key feature for the dataset and all other features are secondary. Henceforth, it can be said that HDI, solely, can determine the development rate of any country, as HDI is a composite index of three main features used to define the progress of a country (discussed in sections above). And all other features, like, import/GDP/GNI, etc., can be used as a cross-verification tool.
+
+A pair plot graph to clearly state the co-relation have been included in the appendices. 
+As discussed, HDI is the primary feature of our dataset to determine whether a country is developed or not, or in a state of developing, we use different year values for HDI, i.e., in our dataset, we have used HDI values for 11 years, starting from 2007 to 2017. This HDI value will help us to predict the status of a country for any future year, by calculating the HDI value. It also allows us to classify the countries on the basis of their development. 
+A density plot has been created in order to know the distribution of data over continuous interval between different HDI values (2007-2017). 
+The graph generated above shows how the HDI values fluctuate between different time intervals.  
+
+# FEATURE SELECTION 
+
+As defined, there are now three classes in our dataset: 
+•	o Class 0, containing countries which are under developed. 
+•	o Class 1, containing countries which are developing. 
+•	o Class 2, containing countries which are developed. 
+
+A relative score is given to each attribute. The higher the score attribute receives, the more importance it holds. We have tried to extract the features by giving it a score. 
+Post the result is obtained, only those features are selected whose score is higher, i.e., HDI Value of 2007 and HDI Value of 2011, and then we have imported these values with three classes and a graph using matplotlib is plotted for virtualisation and understanding purposes.  
+
+After all this visualization, it is easy to find the correlation of different features with HDI. Also, it will be easy to train the model, as we have an idea of what percent of data falls in which category. 
+Post visualisation, the data has been split into two part: 
+•	o Training Data: 80% of the total dataset has been used to train the model. 
+•	o Test Data: 20% of dataset has been used to test the model. 
+
+(Code has been attached in the appendices) 
+Finally, we have normalised our dataset in order to transform all the data and to reach to a linear relationship. (Code has been attached in the appendices) 
+
+#  METHODOLOGY 
+
+This section talks about different models used to train and test our data. As, there are two problems we are dealing with in this project: Classification and Prediction, we are going to use different methods for training and test our data for different problems. 
+6.1. Methods Used 
+There are 4 different models that have been used for solving the problem: 
+1. Logistic Regression.   
+2. K-Nearest Neighbours.   
+3. Decision Tree Learning.   
+4. Support Vector Machine.   
+
+LOGISTIC REGRESSION: It is a classification problem. Linear classification is also called as logistic regression. It also serves in predicting, hence, it can also be called as prediction analysis technique. This form is used to describe the data and to find any relationships between one dependent variable and other independent. 
+
+K-NEAREST NEIGHBOURS: It is an algorithm used for both classification and regression problems. In K nearest neighbours problems, for any giver variable, its nearest neighbours are searched for finding the best suit for that object. If the graph is smaller, the algorithm with return good accuracy, but when the graph is huge, the accuracy deteriorates because it will have to search more number of neighbours. 
+
+SUPPORT VECTOR MACHINE: It is a supervised learning model that uses data for the classification and regression problem. Usually, the algorithm of SVM, transforms the data and based on the found transformations, it finds an optimal boundary between the possible outputs. It is one technique that reduces over-fitting[10]. 
+
+DECISION TREE LEARNING: It is a form of learning where a decision tree is used to conclude from any set of observations about any data. The goal is, a model should be created that predicts the value of the target variable using a set of inputs. 
+(A target variable is one whose value is to be predicted) 
+For all the problems, dataset of 2007 and 2011 are taken because they have the highest score that has been calculated earlier. 
+
+6.2 Classification Problem 
+1. Logistic Regression: Any classification problem could have worked but we chose to do logistic regression as it is robust in nature and it does not require all groups to have same variance. 
+
+Initially, we give 20% of the data as test data and we try to find out the training and test accuracy. 
+After finding the accuracies, we see that the mean squared error is 0.6 which is the square of actual-predicted values. 
+We have then predicted the YTest according to the XTest Values, where X test is the HDI values and YTest consists of the status (developed, developing or under-developing) 
+After calculating this, we plotted the graph for Predicted training vs Actual Training. This is done to check how the accuracy is for our predicting training label for classification. 
+
+2.KNN Classifier: For the value from 1 to 10, the accuracy of KNN classifier is found out. It has been observed the accuracy is best when n=1 as it only searches for one nearest neighbour and the accuracy goes down when we increase k, as it needs to search more neighbours. 
+
+A plotting is done for visualisation purposes in order to understand the KNN problem better. This graph also shows the difference between Training and Test accuracies. 
+A similar approach as logistic regression is followed where ypred is predicted using xpred values and a confusion matrix is printed. 
+It is done to visualise the accuracy, as confusion matrix tells about true positive, false positive, true negative and false negative values.  
+
+We have then, normalised the value and we see 0.8 is the correctly classified instance. 
+A final plotting is done with entire KNN process to visualise and understand the classification better and to see how the classifier has classified the values. 
+We see that KNN classification is more prone to overfitting, so we get higher accuracy for training data and a lower accuracy for test data. 
+
+3. Support Vector Machine: 
+As discussed, SVM is a method which tries to avoid over-fitting as much as possible, so we have decided to use this to train our model. 
+Initially, we have tried to figure out the train and the test accuracy for SVM and then we have plotted it using matplotlib, which is again useful for visualisation, that allows us to understand the relationship between features and classes better. 
+
+The visualisation is as under: 
+Now, we have used yellowbrick classifier, which is a machine learning tool that allows us to combine sci-kit learning with matplotlib, for best visualisation results. 
+It shows a reference between a main classification matrices on a per-class matrix. The classification matrix is defined same as confusion matrix, i.e., on the basis of true positive, true negative, false positive, false negative. Positive and negative, in our case are the name of the classes. A true positive is a case where the actual class is positive as the estimated class. A true negative is when the actual class is negative, but the predicted class is positive. 
+
+Precision: The characteristic of a model to not define the opposite of what the class is, which means a negative class should not be defined positive. 
+Recall: The characteristic of a model to find all positive instances. It is defined, for each class, as the ratio of true positive to the sum of true positive and false negative. 
+F1: It is score where the best is 1 and the worst is 0. These scores are usually lower than accuracy measures as they embed precision and recall. 
+
+4.Decision Tree: 
+We have used Decision tree classification because it helps in feature selection. As, in this methodology, a training dataset is fitted into a decision tree[11]. Usually, the node is the most important feature and it follows an importance order. So, because of this feature, it becomes easy to list out 
+As the data-set is common all the methods, we start by plotting a decision boundary which is used for partitioning two or more classes. After this, we found out the point in the mesh and the result is stored in a coloured plot, attached later in the report. 
+We have also found out the train accuracy and the test accuracy using this method. 
+A colour plot which classifies three classes for a decision tree with a max_depth = 3.   
+
+Finally, the confusion matrix is found out to check for different states like, true 
+Positive, true negative etc.. and a true classes vs. predicted classes graph is generated. 
+A BASIC COMPARISON: 
+A basic comparison is carried out between all the models used for classification (Logistic Regression, KNN, Linear SVM and Decision Tree). It is done in order to conclude which classifier is the best. From the graph, KNN with (n=1) has the highest accuracy which means it is the best classifier. 
+The lowest accuracy is given by SVM, which means out all these classifiers, SVM works poorly.  
+
+6.3 Prediction Problem: 
+
+For Prediction of data, we have dropped all columns other than HDI in the dataset, as using the HDI value, calculating for any country any year, we will be able to predict the status of a country for any future year. We decided to only take HDI because of its properties, i.e., the measure of calculating HDI covers a lot about a country. 
+So, Firstly, all the columns other than HDI are dropped. 
+Now, the dataset consists of only HDI values for a span of 11 years, starting from 2007 to 2017. 
+For each row, we have given the name same as the year instead of HDI_2007, HDI_2008, which means HDI_2007 is now 2007 and so on. (Code added in appendices). 
+Now, a transpose operation is performed in order to set the country’s name as the column name and the year as the row initial. This is done basically to convert the rows into columns, so that years can the head of each row. This will make it easy for us to predict the development rate for each year and for upcoming years too. 
+
+As the header specified here as 0,1,2 was not required so a new header was created where the first row under the header was grabbed and defined as the new header. After doing this, the name of the countries is the new header and each country is a column name too. 
+The HDI curve is plotted for a country to check where the country is in terms of its development. 
+A type conversion is carried out to store floating point values. So, the data type has been converted from Object to Float.  
+
+From this graph, it is evident that the country used for plotting (India) is a developing country as the HDI value is greater than 0.49 but less than 0.75. 
+Feature Selection: 
+In this case, X is the year and Y is the target variable, India in this case. 
+Later, the dataset, again has been split to two categories: Train and Test Data 
+Stats Model, a python module has been used to determine different statistical models and to carry out different tests relating statistics. It also, allows statistical data exploration. 
+An intercept, beta, has been added to our data and the shape has been checked. 
+Training Dataset: The training dataset has been used to train the model. 80% of the total dataset has been classified as train-data. 
+Test Dataset: The test dataset has been used to test the model. 20% of the total dataset has been classified as test-data. 
+
+METHODOLOGY USED: 
+Linear Regression: It is a process to find a relationship between scalar and explanatory entities. The scalar entities are dependent in nature and the explanatory entities are independent variables of the data. We have as it gives promising results for predictive analysis. Our problem here is to predict HDI values and infer the development status of any country from the predicted HDI. 
+
+Further analysis using linear regression has been discussed with the code in the appendices using hashtags. 
+A linear regression model is used whose score provides an accuracy of 99. 19%. The lm.predict gives us the predicted values for x-test 
+
+PREDICTION: 
+For prediction, we have used Tkinter, it is a standard python interface to the Tk GUI toolkit. It is efficient to use tinker and it produces fast results and it is easy to create GUI with Tkinter. 
+We have used combo-box in our project as it allows us to create a drop-down list from where we can select any country and in a text field, we can manually enter the year we wish to calculate the HDI value for. 
+Using the HDI value predicted, we can classify the status in terms of development of a country. 
+We have created two buttons; one year and the other one as country. The one with year is the label one which will allow us to add a year which we wish to predict. The second button will allow us to select the country we wish to predict. 
+Finally, in a text box the result will be obtained, it will be the calculated HDI value. The snippets of the code are attached and the entire code with comments is attached in the appendices. 
+ 
+There are a few countries which tried to set for the prediction. We have tried taking countries from each of the category, Developed, Developing and Under Developed. 
+To tell how exactly tkinter is working a few screenshots of what we have tried to predict vs. what we have currently are attached in the file. The images are attached next to each other so that a clear difference can be made evident. 
+There are two years for which we have tried to predict, 2019 and 2030 and both the values for both different countries show very different results which are easy for analysis. 
+
