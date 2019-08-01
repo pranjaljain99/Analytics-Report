@@ -1,5 +1,5 @@
-### Before performing actual classification, some exploration of data was required to be carried out. 
-#### This required visualisation, which helped in understanding the data better. 
+###  Before performing actual classification, some exploration of data was required to be carried out. 
+####  This required visualisation, which helped in understanding the data better. 
 For this purpose, a scatter plot has been plotted. 
 A two-dimensional plotting with X axis as the location-names and on the Y axis is the HDI Interval. 
 
